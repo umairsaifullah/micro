@@ -1,0 +1,88 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Dec 25 15:53:34 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000008
+                   .org_3       code   0x000200    program   0x00029a
+                   .org_4       code   0x000700    program   0x000008
+.config_300001_PROJECTSHERAZ.O    romdata   0x300001    program   0x000001
+.config_300002_PROJECTSHERAZ.O    romdata   0x300002    program   0x000001
+.config_300003_PROJECTSHERAZ.O    romdata   0x300003    program   0x000001
+.config_300005_PROJECTSHERAZ.O    romdata   0x300005    program   0x000001
+.config_300006_PROJECTSHERAZ.O    romdata   0x300006    program   0x000001
+.config_300008_PROJECTSHERAZ.O    romdata   0x300008    program   0x000001
+.config_300009_PROJECTSHERAZ.O    romdata   0x300009    program   0x000001
+.config_30000A_PROJECTSHERAZ.O    romdata   0x30000a    program   0x000001
+.config_30000B_PROJECTSHERAZ.O    romdata   0x30000b    program   0x000001
+.config_30000C_PROJECTSHERAZ.O    romdata   0x30000c    program   0x000001
+.config_30000D_PROJECTSHERAZ.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x00000f      
+                            0x000200    0x000499      
+                            0x000700    0x000707      
+                            0x300001    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            697 out of 33048 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    AGAIN   0x00024e    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                   AGAIN2   0x00025a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                       BA   0x000328    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      BA3   0x000340    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                CALCULATE   0x000290    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                   COMWRT   0x0002f8    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  DATAWRT   0x000308    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      DEC   0x00027a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    DELAY   0x000318    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  DIVLOOP   0x000472    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  GREATER   0x000468    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      H2A   0x000444    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      INC   0x000264    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+           INITIALDISPLAY   0x000348    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      ISR   0x00049a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                     MAIN   0x000010    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    PRINT   0x000298    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  SSDELAY   0x000330    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    STUCK   0x0002f2    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000010    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    AGAIN   0x00024e    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                   AGAIN2   0x00025a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      INC   0x000264    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      DEC   0x00027a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                CALCULATE   0x000290    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    PRINT   0x000298    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    STUCK   0x0002f2    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                   COMWRT   0x0002f8    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  DATAWRT   0x000308    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                    DELAY   0x000318    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                       BA   0x000328    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  SSDELAY   0x000330    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      BA3   0x000340    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+           INITIALDISPLAY   0x000348    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      H2A   0x000444    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  GREATER   0x000468    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                  DIVLOOP   0x000472    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+                      ISR   0x00049a    program     static F:\Study\MicroProcessor\sherazi\projectsheraz.asm
+
+
