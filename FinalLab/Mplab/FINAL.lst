@@ -1,0 +1,920 @@
+MPASM  5.51                         FINAL.ASM   12-28-2018  6:41:25         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST P=PIC18F452, F=INHX32, N=0, ST=OFF, R=HEX
+Warning[205]: Found directive in column 1. (config)
+22 02 0E 01 80 0F C0 000002 config OSC=HS, OSCS=OFF, WDT=OFF, BORV=45, PWRT=ON, BOR=ON, DEBUG=OFF, LVP=OFF, STVR=OFF
+       F E0 0F 40 
+                      00003 
+                      00004 #INCLUDE <P18F452.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC18F452 processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      01254         LIST
+                      00005 
+Warning[205]: Found directive in column 1. (ORG)
+000000                00006 ORG 00H 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000000 0E00           00007 MOVLW 00H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000002 6E32           00008 MOVWF 32H
+                      00009 
+  00000F83            00010 LCD_DATA EQU PORTD
+  00000F82            00011 LCD_CTRL EQU PORTC
+  00000000            00012 RS EQU RC0
+  00000001            00013 RW EQU RC1
+  00000002            00014 EN EQU RC2
+                      00015 
+                      00016 
+                      00017 
+Warning[203]: Found opcode in column 1. (BCF)
+000004 9094           00018 BCF TRISC,0
+Warning[203]: Found opcode in column 1. (BCF)
+000006 9294           00019 BCF TRISC,1
+Warning[203]: Found opcode in column 1. (BCF)
+000008 9494           00020 BCF TRISC,2 
+                      00021 
+Warning[203]: Found opcode in column 1. (CLRF)
+00000A 6A95           00022 CLRF TRISD
+                      00023 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00000C 0E01           00024 MOVLW 01H
+Warning[203]: Found opcode in column 1. (MOVWF)
+00000E 6E30           00025 MOVWF 30H
+                      00026 
+Warning[203]: Found opcode in column 1. (BCF)
+000010 9482           00027 BCF LCD_CTRL,EN
+Warning[203]: Found opcode in column 1. (CALL)
+000012 ECB7 F001      00028 CALL DELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000016 0E38           00029 MOVLW 0X38;8BIT 2LINES
+Warning[203]: Found opcode in column 1. (CALL)
+000018 ECA7 F001      00030 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00001C ECB7 F001      00031 CALL DELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000020 0E0E           00032 MOVLW 0X0E;CURSON ON
+Warning[203]: Found opcode in column 1. (CALL)
+000022 ECA7 F001      00033 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000026 ECB7 F001      00034 CALL DELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00002A 0E01           00035 MOVLW 0X01
+Warning[203]: Found opcode in column 1. (CALL)
+00002C ECA7 F001      00036 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000030 ECB7 F001      00037 CALL DELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000034 0E06           00038 MOVLW 0X06
+Warning[203]: Found opcode in column 1. (CALL)
+000036 ECA7 F001      00039 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00003A ECB7 F001      00040 CALL DELAY
+                      00041 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00003E 0E80           00042 MOVLW 80H
+Warning[203]: Found opcode in column 1. (CALL)
+000040 ECA7 F001      00043 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000044 ECB7 F001      00044 CALL DELAY
+                      00045 
+                      00046 ;TO GOTO 2ND LINE
+                      00047 
+                      00048 ;MOVLW 0C0H
+                      00049 ;CALL COMWRT
+                      00050 ;CALL SSDELAY
+                      00051 ;
+                      00052 ;TO CLEAR LCD
+                      00053 ;MOVLW 0X01
+                      00054 ;CALL COMWRT
+                      00055 ;CALL SSDELAY
+                      00056 
+                      00057 ;LCD VARIABLES SETTING END
+Warning[203]: Found opcode in column 1. (MOVLW)
+000048 0E01           00058 MOVLW 0X01
+Warning[203]: Found opcode in column 1. (CALL)
+00004A ECA7 F001      00059 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00004E ECFA F001      00060 CALL SSDELAY
+                      00061 
+Warning[203]: Found opcode in column 1. (BSF)
+000052 8093           00062 BSF TRISB,0
+Warning[203]: Found opcode in column 1. (BSF)
+000054 8893           00063 BSF TRISB,4
+                      00064 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000056 0E20           00065 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000058 ECAF F001      00066 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00005C ECFA F001      00067 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000060 0E20           00068 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000062 ECAF F001      00069 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000066 ECFA F001      00070 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00006A 0E20           00071 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+00006C ECAF F001      00072 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000070 ECFA F001      00073 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000074 0E20           00074 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000076 ECAF F001      00075 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00007A ECFA F001      00076 CALL SSDELAY
+                      00077 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00007E 0E47           00078 MOVLW A'G'
+Warning[203]: Found opcode in column 1. (CALL)
+000080 ECAF F001      00079 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000084 ECFA F001      00080 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000088 0E52           00081 MOVLW A'R'
+Warning[203]: Found opcode in column 1. (CALL)
+00008A ECAF F001      00082 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00008E ECFA F001      00083 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000092 0E4F           00084 MOVLW A'O'
+Warning[203]: Found opcode in column 1. (CALL)
+000094 ECAF F001      00085 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000098 ECFA F001      00086 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00009C 0E55           00087 MOVLW A'U'
+Warning[203]: Found opcode in column 1. (CALL)
+00009E ECAF F001      00088 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000A2 ECFA F001      00089 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000A6 0E50           00090 MOVLW A'P'
+Warning[203]: Found opcode in column 1. (CALL)
+0000A8 ECAF F001      00091 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000AC ECFA F001      00092 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000B0 0E20           00093 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0000B2 ECAF F001      00094 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000B6 ECFA F001      00095 CALL SSDELAY
+                      00096 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000BA 0E23           00097 MOVLW A'#'
+Warning[203]: Found opcode in column 1. (CALL)
+0000BC ECAF F001      00098 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000C0 ECFA F001      00099 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000C4 0E20           00100 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0000C6 ECAF F001      00101 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000CA ECFA F001      00102 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000CE 0E30           00103 MOVLW A'0'
+Warning[203]: Found opcode in column 1. (CALL)
+0000D0 ECAF F001      00104 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000D4 ECFA F001      00105 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000D8 0E31           00106 MOVLW A'1'
+Warning[203]: Found opcode in column 1. (CALL)
+0000DA ECAF F001      00107 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000DE ECFA F001      00108 CALL SSDELAY
+                      00109 ; NOW MOVE TO 2ND LINE
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000E2 0EC0           00110 MOVLW 0C0H
+Warning[203]: Found opcode in column 1. (CALL)
+0000E4 ECA7 F001      00111 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000E8 ECFA F001      00112 CALL SSDELAY
+                      00113 
+                      00114 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000EC 0E20           00115 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0000EE ECAF F001      00116 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000F2 ECFA F001      00117 CALL SSDELAY
+                      00118 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000F6 0E20           00119 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0000F8 ECAF F001      00120 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0000FC ECFA F001      00121 CALL SSDELAY
+                      00122 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000100 0E46           00123 MOVLW A'F'
+Warning[203]: Found opcode in column 1. (CALL)
+000102 ECAF F001      00124 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000106 ECFA F001      00125 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00010A 0E49           00126 MOVLW A'I'
+Warning[203]: Found opcode in column 1. (CALL)
+00010C ECAF F001      00127 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000110 ECFA F001      00128 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000114 0E4E           00129 MOVLW A'N'
+Warning[203]: Found opcode in column 1. (CALL)
+000116 ECAF F001      00130 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00011A ECFA F001      00131 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00011E 0E41           00132 MOVLW A'A'
+Warning[203]: Found opcode in column 1. (CALL)
+000120 ECAF F001      00133 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000124 ECFA F001      00134 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000128 0E4C           00135 MOVLW A'L'
+Warning[203]: Found opcode in column 1. (CALL)
+00012A ECAF F001      00136 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00012E ECFA F001      00137 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000132 0E20           00138 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000134 ECAF F001      00139 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000138 ECFA F001      00140 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00013C 0E50           00141 MOVLW A'P'
+Warning[203]: Found opcode in column 1. (CALL)
+00013E ECAF F001      00142 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000142 ECFA F001      00143 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000146 0E52           00144 MOVLW A'R'
+Warning[203]: Found opcode in column 1. (CALL)
+000148 ECAF F001      00145 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00014C ECFA F001      00146 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000150 0E4F           00147 MOVLW A'O'
+Warning[203]: Found opcode in column 1. (CALL)
+000152 ECAF F001      00148 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000156 ECFA F001      00149 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00015A 0E4A           00150 MOVLW A'J'
+Warning[203]: Found opcode in column 1. (CALL)
+00015C ECAF F001      00151 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000160 ECFA F001      00152 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000164 0E45           00153 MOVLW A'E'
+Warning[203]: Found opcode in column 1. (CALL)
+000166 ECAF F001      00154 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00016A ECFA F001      00155 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00016E 0E43           00156 MOVLW A'C'
+Warning[203]: Found opcode in column 1. (CALL)
+000170 ECAF F001      00157 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000174 ECFA F001      00158 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000178 0E54           00159 MOVLW A'T'
+Warning[203]: Found opcode in column 1. (CALL)
+00017A ECAF F001      00160 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00017E ECFA F001      00161 CALL SSDELAY
+                      00162 
+                      00163 
+                      00164 
+                      00165 
+000182 A081           00166 LOOP1 BTFSS PORTB,0
+Warning[203]: Found opcode in column 1. (BRA)
+000184 D7FE           00167 BRA LOOP1
+                      00168 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000186 0E01           00169 MOVLW 0X01
+Warning[203]: Found opcode in column 1. (CALL)
+000188 ECA7 F001      00170 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00018C ECFA F001      00171 CALL SSDELAY
+                      00172 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000190 0E20           00173 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000192 ECAF F001      00174 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000196 ECFA F001      00175 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00019A 0E50           00176 MOVLW A'P'
+Warning[203]: Found opcode in column 1. (CALL)
+00019C ECAF F001      00177 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001A0 ECFA F001      00178 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001A4 0E45           00179 MOVLW A'E'
+Warning[203]: Found opcode in column 1. (CALL)
+0001A6 ECAF F001      00180 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001AA ECFA F001      00181 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001AE 0E52           00182 MOVLW A'R'
+Warning[203]: Found opcode in column 1. (CALL)
+0001B0 ECAF F001      00183 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001B4 ECFA F001      00184 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001B8 0E53           00185 MOVLW A'S'
+Warning[203]: Found opcode in column 1. (CALL)
+0001BA ECAF F001      00186 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001BE ECFA F001      00187 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001C2 0E4F           00188 MOVLW A'O'
+Warning[203]: Found opcode in column 1. (CALL)
+0001C4 ECAF F001      00189 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001C8 ECFA F001      00190 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001CC 0E4E           00191 MOVLW A'N'
+Warning[203]: Found opcode in column 1. (CALL)
+0001CE ECAF F001      00192 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001D2 ECFA F001      00193 CALL SSDELAY 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001D6 0E20           00194 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0001D8 ECAF F001      00195 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001DC ECFA F001      00196 CALL SSDELAY
+                      00197 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001E0 0E45           00198 MOVLW A'E'
+Warning[203]: Found opcode in column 1. (CALL)
+0001E2 ECAF F001      00199 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001E6 ECFA F001      00200 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001EA 0E4E           00201 MOVLW A'N'
+Warning[203]: Found opcode in column 1. (CALL)
+0001EC ECAF F001      00202 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001F0 ECFA F001      00203 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001F4 0E54           00204 MOVLW A'T'
+Warning[203]: Found opcode in column 1. (CALL)
+0001F6 ECAF F001      00205 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0001FA ECFA F001      00206 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0001FE 0E45           00207 MOVLW A'E'
+Warning[203]: Found opcode in column 1. (CALL)
+000200 ECAF F001      00208 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000204 ECFA F001      00209 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000208 0E52           00210 MOVLW A'R'
+Warning[203]: Found opcode in column 1. (CALL)
+00020A ECAF F001      00211 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00020E ECFA F001      00212 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000212 0E45           00213 MOVLW A'E'
+Warning[203]: Found opcode in column 1. (CALL)
+000214 ECAF F001      00214 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000218 ECFA F001      00215 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00021C 0E44           00216 MOVLW A'D'
+Warning[203]: Found opcode in column 1. (CALL)
+00021E ECAF F001      00217 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000222 ECFA F001      00218 CALL SSDELAY
+                      00219 
+                      00220 
+                      00221 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000226 0E07           00222 MOVLW 07H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000228 6ED5           00223 MOVWF T0CON
+                      00224 
+00022A B881           00225 DELAYYY BTFSC PORTB,4
+Warning[203]: Found opcode in column 1. (BRA)
+00022C D017           00226 BRA PRINTT
+                      00227 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00022E 0EF0           00228 MOVLW 0F0H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000230 6ED7           00229 MOVWF TMR0H
+                      00230 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000232 0EBE           00231 MOVLW 0BEH
+Warning[203]: Found opcode in column 1. (MOVWF)
+000234 6ED6           00232 MOVWF TMR0L
+                      00233 ;
+                      00234 ;
+Warning[203]: Found opcode in column 1. (BCF)
+000236 94F2           00235 BCF INTCON,TMR0IF
+                      00236 ;
+Warning[203]: Found opcode in column 1. (BSF)
+000238 8ED5           00237 BSF T0CON,TMR0ON
+                      00238 ;
+00023A A4F2           00239 TEST1 BTFSS INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BRA)
+00023C D7FE           00240 BRA TEST1
+Warning[203]: Found opcode in column 1. (BCF)
+00023E 9ED5           00241 BCF T0CON,TMR0ON
+                      00242 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000240 0E3B           00243 MOVLW D'59' ;TO COMPARE IF OUR COUNT IS LESS THAN 60 OR NOT
+Warning[203]: Found opcode in column 1. (CPFSLT)
+000242 6032           00244 CPFSLT 32H
+Warning[203]: Found opcode in column 1. (BRA)
+000244 D002           00245 BRA MINUTE
+Warning[203]: Found opcode in column 1. (INCF)
+000246 2A32           00246 INCF 32H
+Warning[203]: Found opcode in column 1. (BRA)
+000248 D7F0           00247 BRA DELAYYY
+                      00248 
+00024A                00249 MINUTE
+Warning[203]: Found opcode in column 1. (CLRF)
+00024A 6A32           00250 CLRF 32H
+Warning[203]: Found opcode in column 1. (MOVLW)
+00024C 0E3B           00251 MOVLW D'59'
+Warning[203]: Found opcode in column 1. (CPFSLT)
+00024E 6033           00252 CPFSLT 33H
+Warning[203]: Found opcode in column 1. (BRA)
+000250 D002           00253 BRA HOUR
+Warning[203]: Found opcode in column 1. (INCF)
+000252 2A33           00254 INCF 33H
+Warning[203]: Found opcode in column 1. (BRA)
+000254 D7EA           00255 BRA DELAYYY
+                      00256 
+000256                00257 HOUR
+Warning[203]: Found opcode in column 1. (CLRF)
+000256 6A33           00258 CLRF 33H
+Warning[203]: Found opcode in column 1. (INCF)
+000258 2A34           00259 INCF 34H
+Warning[203]: Found opcode in column 1. (BRA)
+00025A D7E7           00260 BRA DELAYYY
+                      00261 
+                      00262 
+                      00263 
+00025C                00264 PRINTT
+                      00265 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00025C 0E01           00266 MOVLW 0X01
+Warning[203]: Found opcode in column 1. (CALL)
+00025E ECA7 F001      00267 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000262 ECFA F001      00268 CALL SSDELAY
+                      00269 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000266 0E20           00270 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000268 ECAF F001      00271 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00026C ECFA F001      00272 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000270 0E20           00273 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000272 ECAF F001      00274 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000276 ECFA F001      00275 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00027A 0E20           00276 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+00027C ECAF F001      00277 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000280 ECFA F001      00278 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000284 0E20           00279 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+000286 ECAF F001      00280 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00028A ECFA F001      00281 CALL SSDELAY
+                      00282 
+Warning[203]: Found opcode in column 1. (MOVF)
+00028E 5034           00283 MOVF 34H,W ; HOURS
+Warning[203]: Found opcode in column 1. (CALL)
+000290 ECC3 F001      00284 CALL H2A
+                      00285 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000294 0E3A           00286 MOVLW A':'
+Warning[203]: Found opcode in column 1. (CALL)
+000296 ECAF F001      00287 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00029A ECFA F001      00288 CALL SSDELAY
+                      00289 
+                      00290 
+Warning[203]: Found opcode in column 1. (MOVF)
+00029E 5033           00291 MOVF 33H,W ;MINUTES
+Warning[203]: Found opcode in column 1. (CALL)
+0002A0 ECC3 F001      00292 CALL H2A
+                      00293 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002A4 0E3A           00294 MOVLW A':'
+Warning[203]: Found opcode in column 1. (CALL)
+0002A6 ECAF F001      00295 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002AA ECFA F001      00296 CALL SSDELAY
+                      00297 
+                      00298 
+Warning[203]: Found opcode in column 1. (MOVF)
+0002AE 5032           00299 MOVF 32H,W ; SECONDS
+Warning[203]: Found opcode in column 1. (CALL)
+0002B0 ECC3 F001      00300 CALL H2A
+                      00301 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002B4 0EC0           00302 MOVLW 0C0H
+Warning[203]: Found opcode in column 1. (CALL)
+0002B6 ECA7 F001      00303 CALL COMWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002BA ECFA F001      00304 CALL SSDELAY
+                      00305 
+                      00306 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002BE 0E20           00307 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0002C0 ECAF F001      00308 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002C4 ECFA F001      00309 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002C8 0E20           00310 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0002CA ECAF F001      00311 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002CE ECFA F001      00312 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002D2 0E20           00313 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0002D4 ECAF F001      00314 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002D8 ECFA F001      00315 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002DC 0E20           00316 MOVLW A' '
+Warning[203]: Found opcode in column 1. (CALL)
+0002DE ECAF F001      00317 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002E2 ECFA F001      00318 CALL SSDELAY
+                      00319 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002E6 0E48           00320 MOVLW A'H'
+Warning[203]: Found opcode in column 1. (CALL)
+0002E8 ECAF F001      00321 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002EC ECFA F001      00322 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002F0 0E48           00323 MOVLW A'H'
+Warning[203]: Found opcode in column 1. (CALL)
+0002F2 ECAF F001      00324 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0002F6 ECFA F001      00325 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002FA 0E3A           00326 MOVLW A':'
+Warning[203]: Found opcode in column 1. (CALL)
+0002FC ECAF F001      00327 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000300 ECFA F001      00328 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000304 0E4D           00329 MOVLW A'M'
+Warning[203]: Found opcode in column 1. (CALL)
+000306 ECAF F001      00330 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00030A ECFA F001      00331 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00030E 0E4D           00332 MOVLW A'M'
+Warning[203]: Found opcode in column 1. (CALL)
+000310 ECAF F001      00333 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000314 ECFA F001      00334 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000318 0E3A           00335 MOVLW A':'
+Warning[203]: Found opcode in column 1. (CALL)
+00031A ECAF F001      00336 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00031E ECFA F001      00337 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+000322 0E53           00338 MOVLW A'S'
+Warning[203]: Found opcode in column 1. (CALL)
+000324 ECAF F001      00339 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000328 ECFA F001      00340 CALL SSDELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00032C 0E53           00341 MOVLW A'S'
+Warning[203]: Found opcode in column 1. (CALL)
+00032E ECAF F001      00342 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+000332 ECFA F001      00343 CALL SSDELAY
+                      00344 
+                      00345 
+                      00346 
+Warning[203]: Found opcode in column 1. (GOTO)
+000336 EF9D F001      00347 GOTO stuck
+                      00348 
+                      00349 
+                      00350 ;modified at 6:41am 28-12-2018
+                      00351 
+00033A                00352 stuck
+                      00353 ;;BTFSS PORTC,5
+                      00354 ;;BRA ENDO
+                      00355 ;BTFSS PORTB,0 ;if using push button as reset
+Warning[203]: Found opcode in column 1. (BRA)
+00033A D7FF           00356 BRA stuck
+                      00357 ;BRA AGAIN
+                      00358 
+                      00359 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+                      00360 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FUNCTIONS CALL  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+                      00361 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+                      00362 
+00033C                00363 DELAYY
+Warning[203]: Found opcode in column 1. (BCF)
+00033C 9ED5           00364 BCF T0CON,TMR0ON
+Warning[203]: Found opcode in column 1. (MOVLW)
+00033E 0EF0           00365 MOVLW 0F0H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000340 6ED7           00366 MOVWF TMR0H 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000342 0EBD           00367 MOVLW 0BDH
+Warning[203]: Found opcode in column 1. (MOVWF)
+000344 6ED6           00368 MOVWF TMR0L
+Warning[203]: Found opcode in column 1. (BSF)
+000346 8ED5           00369 BSF T0CON,TMR0ON
+000348 A4F2           00370 ABCD BTFSS INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BRA)
+00034A D7FE           00371 BRA ABCD
+                      00372 
+Warning[203]: Found opcode in column 1. (RETURN)
+00034C 0012           00373 RETURN
+                      00374 
+                      00375 
+                      00376 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+                      00377 
+                      00378 ;FOR LCD DISPLAYING;
+                      00379 
+00034E                00380 COMWRT
+Warning[203]: Found opcode in column 1. (MOVWF)
+00034E 6E83           00381 MOVWF LCD_DATA
+Warning[203]: Found opcode in column 1. (BCF)
+000350 9082           00382 BCF LCD_CTRL,RS ;AS COMMAND MODE SELECT REGISTER = 0
+Warning[203]: Found opcode in column 1. (BCF)
+000352 9282           00383 BCF LCD_CTRL,RW ; AS OUTPUT WRITE MODE IN LCD
+Warning[203]: Found opcode in column 1. (BSF)
+000354 8482           00384 BSF LCD_CTRL,EN ;ENABLER PIN
+Warning[203]: Found opcode in column 1. (CALL)
+000356 ECB7 F001      00385 CALL DELAY
+Warning[203]: Found opcode in column 1. (BCF)
+00035A 9482           00386 BCF LCD_CTRL,EN
+                      00387 
+Warning[203]: Found opcode in column 1. (RETURN)
+00035C 0012           00388 RETURN
+                      00389 
+00035E                00390 DATAWRT
+Warning[203]: Found opcode in column 1. (MOVWF)
+00035E 6E83           00391 MOVWF LCD_DATA
+Warning[203]: Found opcode in column 1. (BSF)
+000360 8082           00392 BSF LCD_CTRL,RS ;AS DATA MODE SELECT REGISTER =1
+Warning[203]: Found opcode in column 1. (BCF)
+000362 9282           00393 BCF LCD_CTRL,RW ; AS OUTPUT WRITE MODE IN LCD
+Warning[203]: Found opcode in column 1. (BSF)
+000364 8482           00394 BSF LCD_CTRL,EN ;ENABLER PIN
+Warning[203]: Found opcode in column 1. (CALL)
+000366 ECB7 F001      00395 CALL DELAY
+Warning[203]: Found opcode in column 1. (BCF)
+00036A 9482           00396 BCF LCD_CTRL,EN
+                      00397 
+Warning[203]: Found opcode in column 1. (RETURN)
+00036C 0012           00398 RETURN
+                      00399 
+00036E                00400 DELAY
+Warning[203]: Found opcode in column 1. (MOVLW)
+00036E 0E08           00401 MOVLW 08H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000370 6ED5           00402 MOVWF T0CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+000372 0E3C           00403 MOVLW 3CH
+Warning[203]: Found opcode in column 1. (MOVWF)
+000374 6ED7           00404 MOVWF TMR0H
+Warning[203]: Found opcode in column 1. (MOVLW)
+000376 0EB0           00405 MOVLW 0B0H
+Warning[203]: Found opcode in column 1. (MOVWF)
+000378 6ED6           00406 MOVWF TMR0L
+Warning[203]: Found opcode in column 1. (BCF)
+00037A 94F2           00407 BCF INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BSF)
+00037C 8ED5           00408 BSF T0CON,7
+00037E A4F2           00409 BA BTFSS INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BRA)
+000380 D7FE           00410 BRA BA
+Warning[203]: Found opcode in column 1. (BCF)
+000382 9ED5           00411 BCF T0CON,7
+                      00412 
+                      00413 
+Warning[203]: Found opcode in column 1. (RETURN)
+000384 0012           00414 RETURN
+                      00415 
+                      00416 
+000386                00417 H2A
+                      00418 
+Warning[203]: Found opcode in column 1. (MOVWF)
+000386 6E35           00419 MOVWF 35H ;JO NUMBER CONVERT KARNA HAI;
+Warning[203]: Found opcode in column 1. (movlw)
+000388 0E0A           00420 movlw 0Ah ; 10
+Warning[203]: Found opcode in column 1. (movwf)
+00038A 6E55           00421 movwf 55h
+                      00422 
+Warning[203]: Found opcode in column 1. (CPFSLT)
+00038C 6035           00423 CPFSLT 35H
+Warning[203]: Found opcode in column 1. (BRA)
+00038E D00D           00424 BRA GREATER
+Warning[203]: Found opcode in column 1. (MOVLW)
+000390 0E30           00425 MOVLW 30H
+Warning[203]: Found opcode in column 1. (ADDWF)
+000392 2635           00426 ADDWF 35H
+                      00427 
+Warning[203]: Found opcode in column 1. (MOVLW)
+000394 0E30           00428 MOVLW 30H
+Warning[203]: Found opcode in column 1. (CALL)
+000396 ECAF F001      00429 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+00039A ECB7 F001      00430 CALL DELAY
+                      00431 
+Warning[203]: Found opcode in column 1. (MOVF)
+00039E 5035           00432 MOVF 35H,W
+Warning[203]: Found opcode in column 1. (CALL)
+0003A0 ECAF F001      00433 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0003A4 ECB7 F001      00434 CALL DELAY
+                      00435 
+Warning[203]: Found opcode in column 1. (RETURN)
+0003A8 0012           00436 RETURN
+0003AA                00437 GREATER
+                      00438 
+                      00439 ;BITS KO ALAG KARNA HAI:
+                      00440 
+                      00441 ;DIV 
+                      00442 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003AA 0E00           00443 MOVLW 00H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003AC 6E07           00444 MOVWF 07H
+Warning[203]: Found opcode in column 1. (MOVFF)
+0003AE C035 F036      00445 MOVFF 35H,36H
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003B2 0E0A           00446 MOVLW 0AH
+                      00447 
+0003B4 2A07           00448 DIVLOOP INCF 07H
+Warning[203]: Found opcode in column 1. (SUBWF)
+0003B6 5E36           00449 SUBWF 36H,F
+Warning[203]: Found opcode in column 1. (BNN)
+0003B8 E7FD           00450 BNN DIVLOOP
+Warning[203]: Found opcode in column 1. (DECF)
+0003BA 0607           00451 DECF 07H
+Warning[203]: Found opcode in column 1. (ADDWF)
+0003BC 2636           00452 ADDWF 36H,F ;REMAINDER
+                      00453 
+                      00454 ;36H CONTAINS REMAINDER
+                      00455 ;07H CONTAINS QUOTIENT
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003BE 0E30           00456 MOVLW 30H
+Warning[203]: Found opcode in column 1. (ADDWF)
+0003C0 2607           00457 ADDWF 07H;;07 CONTAINS FIRST BIT OF TIMER
+Warning[203]: Found opcode in column 1. (MOVF)
+0003C2 5007           00458 MOVF 07H,W
+Warning[203]: Found opcode in column 1. (CALL)
+0003C4 ECAF F001      00459 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0003C8 ECFA F001      00460 CALL SSDELAY
+                      00461 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003CC 0E30           00462 MOVLW 30H
+Warning[203]: Found opcode in column 1. (ADDWF)
+0003CE 2636           00463 ADDWF 36H;;07 CONTAINS 2ND BIT OF TIMER
+Warning[203]: Found opcode in column 1. (MOVF)
+0003D0 5036           00464 MOVF 36H,W
+Warning[203]: Found opcode in column 1. (CALL)
+0003D2 ECAF F001      00465 CALL DATAWRT
+Warning[203]: Found opcode in column 1. (CALL)
+0003D6 ECFA F001      00466 CALL SSDELAY
+                      00467 
+                      00468 
+Warning[203]: Found opcode in column 1. (RETURN)
+0003DA 0012           00469 RETURN
+                      00470 
+                      00471 ;MOVLW 40H
+                      00472 ;ADDWF 35H
+                      00473 ;MOVF 35H,W
+                      00474 ;
+                      00475 ;RETURN
+                      00476 
+                      00477 
+                      00478 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      00479 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      00480 
+                      00481 
+                      00482 
+0003DC                00483 SDELAY ;15MS
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003DC 0E08           00484 MOVLW 08H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003DE 6ED5           00485 MOVWF T0CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003E0 0EC5           00486 MOVLW 0C5H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003E2 6ED7           00487 MOVWF TMR0H
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003E4 0E68           00488 MOVLW 68H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003E6 6ED6           00489 MOVWF TMR0L
+Warning[203]: Found opcode in column 1. (BCF)
+0003E8 94F2           00490 BCF INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BSF)
+0003EA 8ED5           00491 BSF T0CON,7
+0003EC A4F2           00492 BA2 BTFSS INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BRA)
+0003EE D7FE           00493 BRA BA2
+Warning[203]: Found opcode in column 1. (BCF)
+0003F0 9ED5           00494 BCF T0CON,7
+                      00495 
+                      00496 
+Warning[203]: Found opcode in column 1. (RETURN)
+0003F2 0012           00497 RETURN
+                      00498 
+                      00499 
+0003F4                00500 SSDELAY ;1MS
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003F4 0E08           00501 MOVLW 08H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003F6 6ED5           00502 MOVWF T0CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003F8 0EFC           00503 MOVLW 0FCH
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003FA 6ED7           00504 MOVWF TMR0H
+Warning[203]: Found opcode in column 1. (MOVLW)
+0003FC 0E18           00505 MOVLW 18H
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003FE 6ED6           00506 MOVWF TMR0L
+Warning[203]: Found opcode in column 1. (BCF)
+000400 94F2           00507 BCF INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BSF)
+000402 8ED5           00508 BSF T0CON,7
+000404 A4F2           00509 BA3 BTFSS INTCON,TMR0IF
+Warning[203]: Found opcode in column 1. (BRA)
+000406 D7FE           00510 BRA BA3
+Warning[203]: Found opcode in column 1. (BCF)
+000408 9ED5           00511 BCF T0CON,7
+                      00512 
+                      00513 
+Warning[203]: Found opcode in column 1. (RETURN)
+00040A 0012           00514 RETURN
+                      00515 
+Warning[205]: Found directive in column 1. (end)
+                      00516 end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0200 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0240 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0280 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+02C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0300 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0340 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0380 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+03C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0400 : XXXXXXXXXXXX---- ---------------- ---------------- ----------------
+0000 : -XXX-XX-XXXXXX-- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Bytes Used:  1047
+Program Memory Bytes Free: 31721
+
+
+Errors   :     0
+Warnings :   354 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

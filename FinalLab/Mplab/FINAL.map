@@ -1,0 +1,84 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Fri Dec 28 06:41:28 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x00040c
+   .config_300001_FINAL.O    romdata   0x300001    program   0x000001
+   .config_300002_FINAL.O    romdata   0x300002    program   0x000001
+   .config_300003_FINAL.O    romdata   0x300003    program   0x000001
+   .config_300005_FINAL.O    romdata   0x300005    program   0x000001
+   .config_300006_FINAL.O    romdata   0x300006    program   0x000001
+   .config_300008_FINAL.O    romdata   0x300008    program   0x000001
+   .config_300009_FINAL.O    romdata   0x300009    program   0x000001
+   .config_30000A_FINAL.O    romdata   0x30000a    program   0x000001
+   .config_30000B_FINAL.O    romdata   0x30000b    program   0x000001
+   .config_30000C_FINAL.O    romdata   0x30000c    program   0x000001
+   .config_30000D_FINAL.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00040b      
+                            0x300001    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            1047 out of 33048 program addresses used, program memory utilization is 3%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     ABCD   0x000348    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                       BA   0x00037e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      BA2   0x0003ec    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      BA3   0x000404    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   COMWRT   0x00034e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DATAWRT   0x00035e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    DELAY   0x00036e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   DELAYY   0x00033c    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DELAYYY   0x00022a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DIVLOOP   0x0003b4    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  GREATER   0x0003aa    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      H2A   0x000386    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                     HOUR   0x000256    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    LOOP1   0x000182    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   MINUTE   0x00024a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   PRINTT   0x00025c    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   SDELAY   0x0003dc    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  SSDELAY   0x0003f4    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    TEST1   0x00023a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    stuck   0x00033a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    LOOP1   0x000182    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DELAYYY   0x00022a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    TEST1   0x00023a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   MINUTE   0x00024a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                     HOUR   0x000256    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   PRINTT   0x00025c    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    stuck   0x00033a    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   DELAYY   0x00033c    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                     ABCD   0x000348    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   COMWRT   0x00034e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DATAWRT   0x00035e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                    DELAY   0x00036e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                       BA   0x00037e    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      H2A   0x000386    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  GREATER   0x0003aa    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  DIVLOOP   0x0003b4    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                   SDELAY   0x0003dc    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      BA2   0x0003ec    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                  SSDELAY   0x0003f4    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+                      BA3   0x000404    program     static F:\Study\MicroProcessor\FINAL TIMER\FINAL.ASM
+
+
